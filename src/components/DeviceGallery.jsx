@@ -107,11 +107,11 @@ function GalleryImage({ shot, mobile, thumb = false }) {
   const [failed, setFailed] = useState(false);
   const frameClass = mobile
     ? thumb
-      ? 'mx-auto aspect-[9/16] w-14 rounded-[1rem]'
-      : 'mx-auto aspect-[9/16] w-full max-w-[240px] rounded-[1.75rem]'
+      ? 'mx-auto h-[112px] w-14 rounded-[1rem]'
+      : 'mx-auto w-full max-w-[260px] rounded-[1.75rem]'
     : thumb
-      ? 'aspect-[16/10] w-full rounded-[1rem]'
-      : 'aspect-[16/10] w-full rounded-[1.75rem]';
+      ? 'h-[72px] w-full rounded-[1rem]'
+      : 'w-full rounded-[1.75rem]';
 
   if (failed) {
     return (
@@ -132,14 +132,24 @@ function GalleryImage({ shot, mobile, thumb = false }) {
   }
 
   return (
-    <img
-      src={shot.path}
-      alt={shot.alt}
-      onError={() => setFailed(true)}
-      className={`${frameClass} border border-white/10 bg-[#0f1319] object-contain ${
-        thumb ? 'p-1.5' : 'p-2 sm:p-3'
+    <div
+      className={`${frameClass} flex items-center justify-center overflow-hidden border border-white/10 bg-[#0f1319] ${
+        thumb ? 'p-1' : 'p-2 sm:p-3'
       }`}
-    />
+    >
+      <img
+        src={shot.path}
+        alt={shot.alt}
+        onError={() => setFailed(true)}
+        className={
+          thumb
+            ? 'max-h-full max-w-full object-contain'
+            : mobile
+              ? 'block h-auto max-h-[520px] w-auto max-w-full object-contain'
+              : 'block h-auto max-h-[420px] w-full object-contain'
+        }
+      />
+    </div>
   );
 }
 

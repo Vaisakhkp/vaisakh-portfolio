@@ -185,8 +185,8 @@ function ProjectFrame({ imagePath, imageAlt, compact = false }) {
           </div>
         </div>
         <div
-          className={`mt-4 overflow-hidden rounded-[1.2rem] border border-white/10 ${
-            compact ? 'aspect-[16/11]' : 'aspect-[16/10]'
+          className={`mt-4 flex items-center justify-center overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#0f1319] px-2 py-2 sm:px-3 sm:py-3 ${
+            compact ? 'min-h-[220px]' : 'min-h-[320px]'
           }`}
         >
           {!failed ? (
@@ -194,7 +194,9 @@ function ProjectFrame({ imagePath, imageAlt, compact = false }) {
               src={imagePath}
               alt={imageAlt}
               onError={() => setFailed(true)}
-              className="h-full w-full bg-[#0f1319] object-contain p-2 sm:p-3"
+              className={`block max-w-full object-contain ${
+                compact ? 'h-auto max-h-[240px] w-full' : 'h-auto max-h-[360px] w-full'
+              }`}
             />
           ) : (
             <div className="flex h-full items-end bg-[linear-gradient(180deg,rgba(239,228,210,0.92),rgba(199,154,98,0.92))] p-5">
