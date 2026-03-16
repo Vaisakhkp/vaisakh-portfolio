@@ -130,9 +130,6 @@ function HeroSection({
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.18 }}
             className="relative mx-auto w-full max-w-[720px]"
           >
-            <div className="absolute inset-x-10 top-10 h-32 rounded-full bg-[var(--accent-soft)] blur-3xl" />
-            <div className="absolute bottom-10 right-10 h-36 w-36 rounded-full bg-[var(--accent-secondary-soft)] blur-3xl" />
-
             <div className="relative hidden min-h-[470px] lg:block">
               {accentCards.map((item, index) => (
                 <AccentCard
@@ -174,43 +171,45 @@ function ProjectFrame({ imagePath, imageAlt, compact = false }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface-strong)] p-3 shadow-glow sm:p-4">
-      <div className="rounded-[1.65rem] border border-white/10 bg-[#12161e] p-3 sm:p-4">
-        <div className="flex items-center gap-2 border-b border-white/8 pb-3">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ffd166]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#4cc9f0]" />
-          <div className="ml-3 rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-white/50">
-            Spice Project
+    <div className="relative">
+      <div className="relative rounded-[2rem] border border-[var(--border)] bg-[linear-gradient(180deg,#2a313b,#181d24)] p-3 shadow-glow sm:p-4">
+        <div className="rounded-[1.7rem] border border-white/10 bg-[#0f1319] p-3 sm:p-4">
+          <div className="flex items-center gap-2 pb-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffd166]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#4cc9f0]" />
           </div>
-        </div>
-        <div
-          className={`mt-4 flex items-center justify-center overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#0f1319] px-2 py-2 sm:px-3 sm:py-3 ${
-            compact ? 'min-h-[220px]' : 'min-h-[320px]'
-          }`}
-        >
           {!failed ? (
             <img
               src={imagePath}
               alt={imageAlt}
               onError={() => setFailed(true)}
-              className={`block max-w-full object-contain ${
-                compact ? 'h-auto max-h-[240px] w-full' : 'h-auto max-h-[360px] w-full'
+              className={`block w-full rounded-[1rem] object-contain ${
+                compact ? 'max-h-[250px] bg-[#f5efe5]' : 'max-h-[380px] bg-[#f5efe5]'
               }`}
             />
           ) : (
-            <div className="flex h-full items-end bg-[linear-gradient(180deg,rgba(239,228,210,0.92),rgba(199,154,98,0.92))] p-5">
-              <div className="rounded-2xl bg-white/55 p-4 backdrop-blur">
+            <div className="flex min-h-[280px] items-end rounded-[1rem] bg-[linear-gradient(180deg,rgba(239,228,210,0.96),rgba(199,154,98,0.94))] p-5">
+              <div className="rounded-2xl bg-white/65 p-4 backdrop-blur">
                 <p className="text-[10px] uppercase tracking-[0.28em] text-[#365547]/70">
                   Add image
                 </p>
-                <h3 className="mt-2 font-display text-2xl text-[#1c2128]">Desktop Homepage</h3>
+                <h3 className="mt-2 font-display text-2xl text-[#1c2128]">Project Preview</h3>
                 <p className="mt-2 text-sm text-[#1c2128]/70">{imagePath}</p>
               </div>
             </div>
           )}
         </div>
       </div>
+
+      {!compact && (
+        <>
+          <div className="mx-auto h-8 w-20 rounded-b-[1rem] bg-[linear-gradient(180deg,#586270,#2d343d)]" />
+          <div className="mx-auto h-3 w-44 rounded-full bg-[linear-gradient(180deg,#a3acb8,#666f7a)] shadow-[0_12px_24px_rgba(0,0,0,0.2)]" />
+        </>
+      )}
+
+      {compact && <div className="mx-auto h-2.5 w-20 rounded-full bg-[linear-gradient(180deg,#8b94a0,#555e69)]" />}
     </div>
   );
 }
