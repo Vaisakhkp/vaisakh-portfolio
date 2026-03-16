@@ -79,34 +79,34 @@ export const spiceProject = {
     {
       title: 'Desktop Hero',
       path: '/images/spice/desktop-1.png',
-      alt: 'Desktop hero view of The Green Pod website',
+      alt: 'Desktop homepage screenshot of The Green Pod spice e-commerce website built by Vaisakh KP',
     },
     {
       title: 'Desktop Collections',
       path: '/images/spice/desktop-2.png',
-      alt: 'Desktop collections view of The Green Pod website',
+      alt: 'Desktop collections screenshot of The Green Pod spice e-commerce project by Vaisakh KP',
     },
     {
       title: 'Desktop Product',
       path: '/images/spice/desktop-3.png',
-      alt: 'Desktop product detail view of The Green Pod website',
+      alt: 'Desktop product detail screenshot of The Green Pod spice e-commerce project by Vaisakh KP',
     },
   ],
   mobileShots: [
     {
       title: 'Mobile Hero',
       path: '/images/spice/mobile-1.png',
-      alt: 'Mobile hero view of The Green Pod website',
+      alt: 'Mobile homepage screenshot of The Green Pod spice e-commerce website built by Vaisakh KP',
     },
     {
       title: 'Mobile Collections',
       path: '/images/spice/mobile-2.png',
-      alt: 'Mobile collections view of The Green Pod website',
+      alt: 'Mobile collections screenshot of The Green Pod spice e-commerce project by Vaisakh KP',
     },
     {
       title: 'Mobile Product',
       path: '/images/spice/mobile-3.png',
-      alt: 'Mobile product detail view of The Green Pod website',
+      alt: 'Mobile product detail screenshot of The Green Pod spice e-commerce project by Vaisakh KP',
     },
   ],
 };
