@@ -214,9 +214,9 @@ function ProjectFrame({ imagePath, imageAlt, compact = false }) {
 }
 
 function AccentCard({ label, index, reduceMotion, className = '', mobile = false }) {
-  const floatX = index % 2 === 0 ? [0, 14, -10, 0] : [0, -14, 10, 0];
-  const floatY = index % 2 === 0 ? [0, -16, 10, 0] : [0, 16, -10, 0];
-  const floatRotate = index % 2 === 0 ? [0, -2, 1, 0] : [0, 2, -1, 0];
+  const floatX = index % 2 === 0 ? [0, 7, -5, 0] : [0, -7, 5, 0];
+  const floatY = index % 2 === 0 ? [0, -8, 5, 0] : [0, 8, -5, 0];
+  const floatRotate = index % 2 === 0 ? [0, -0.9, 0.45, 0] : [0, 0.9, -0.45, 0];
 
   return (
     <motion.div
@@ -232,7 +232,7 @@ function AccentCard({ label, index, reduceMotion, className = '', mobile = false
         reduceMotion
           ? { duration: 0.35, ease: 'easeOut' }
           : {
-              duration: 7.2 + index * 0.5,
+              duration: 6.6 + index * 0.45,
               repeat: Infinity,
               repeatType: 'mirror',
               ease: 'easeInOut',
