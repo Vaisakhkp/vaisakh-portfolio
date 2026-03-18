@@ -22,6 +22,7 @@ import DeviceGallery from './components/DeviceGallery';
 import HeroSection from './components/HeroSection';
 import {
   contactLinks,
+  education,
   experience,
   heroAccentCards,
   heroIntro,
@@ -357,6 +358,47 @@ function App() {
               </motion.div>
               );
             })}
+          </div>
+        </motion.section>
+
+        <motion.section
+          id="education"
+          variants={reveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16"
+        >
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)] sm:text-sm">
+            Education
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+            Academic background
+          </h2>
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {education.map((item, index) => (
+              <motion.div
+                key={item.level + item.institution}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                whileHover={reduceMotion ? undefined : { y: -4 }}
+                className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)] sm:text-sm">
+                    {item.level}
+                  </p>
+                  <span className="rounded-full border border-[var(--border)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[var(--muted)]">
+                    {item.period}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-semibold">{item.institution}</h3>
+                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">{item.course}</p>
+                <p className="mt-4 text-sm font-medium text-[var(--text)]">{item.result}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.section>
 

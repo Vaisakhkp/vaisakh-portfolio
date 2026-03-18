@@ -3,6 +3,7 @@ export const navItems = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#project' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -59,6 +60,30 @@ export const skills = [
   'REST APIs',
   'Deployment (Vercel / GoDaddy)',
   'Git / GitHub',
+];
+
+export const education = [
+  {
+    level: 'B.Tech',
+    institution: 'Sreepathy Institute of Management and Technology',
+    course: 'Computer Science and Engineering',
+    period: '2018 - 2022',
+    result: 'CGPA: 6.2 / 10',
+  },
+  {
+    level: '12th',
+    institution: 'GVHSS Cherpulassery',
+    course: 'Kerala Board of Higher Secondary Education',
+    period: '2017 - 2018',
+    result: 'Percentage: 81.5%',
+  },
+  {
+    level: '10th',
+    institution: 'Sabari Central School, Cherpulassery',
+    course: 'CBSE',
+    period: '2015 - 2016',
+    result: 'Percentage: 90%',
+  },
 ];
 
 export const spiceProject = {
